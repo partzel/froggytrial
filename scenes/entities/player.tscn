@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c00elbiyaqnjq"]
+[gd_scene load_steps=16 format=3 uid="uid://c00elbiyaqnjq"]
 
+[ext_resource type="Script" uid="uid://dkyp5hs0dqjno" path="res://scenes/entities/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://cyawfv60ghx4g" path="res://assets/sprites/Main Characters/Ninja Frog/Idle (32x32).png" id="1_ucweq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08t41"]
@@ -87,10 +88,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucweq"]
+radius = 8.0
+
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_08t41")
+SPEED = 120.0
+JUMP_VELOCITY = -300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5ki56")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.472471
+frame_progress = 0.824576
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_ucweq")
