@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwh842hp8f6eg"]
+[gd_scene load_steps=10 format=3 uid="uid://cwh842hp8f6eg"]
 
 [ext_resource type="PackedScene" uid="uid://c00elbiyaqnjq" path="res://scenes/entities/player.tscn" id="1_mv5rm"]
 [ext_resource type="Texture2D" uid="uid://d0tx8fy3u0i0x" path="res://assets/sprites/Terrain/Terrain (16x16).png" id="2_a1op6"]
 [ext_resource type="PackedScene" uid="uid://ctfruhjbewl51" path="res://scenes/utils/killzone.tscn" id="3_88bwl"]
 [ext_resource type="PackedScene" uid="uid://cu1t48nxxhf6r" path="res://scenes/entities/fruit.tscn" id="3_atanf"]
 [ext_resource type="PackedScene" uid="uid://bq5oc7txhhxcv" path="res://scenes/entities/enemy.tscn" id="5_xi2wu"]
+[ext_resource type="PackedScene" uid="uid://ctpsrq8vc1o2k" path="res://scenes/utils/game_manager.tscn" id="6_d4dfe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atanf"]
 texture = ExtResource("2_a1op6")
@@ -353,12 +354,15 @@ position = Vector2(496, 70)
 [node name="Fruit9" parent="Pickups" instance=ExtResource("3_atanf")]
 position = Vector2(520, 70)
 
-[node name="Enemy" parent="." instance=ExtResource("5_xi2wu")]
+[node name="enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="enemies" instance=ExtResource("5_xi2wu")]
 position = Vector2(574, 65)
 speed = 100.0
 
-[node name="Enemy2" parent="." instance=ExtResource("5_xi2wu")]
+[node name="Enemy2" parent="enemies" instance=ExtResource("5_xi2wu")]
 position = Vector2(346, -15)
 speed = 100.0
 
-[node name="enemies" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("6_d4dfe")]
+unique_name_in_owner = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c00elbiyaqnjq"]
 
-[ext_resource type="Script" uid="uid://dkyp5hs0dqjno" path="res://scenes/entities/player.gd" id="1_08t41"]
+[ext_resource type="Script" uid="uid://dkyp5hs0dqjno" path="res://scripts/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://cyawfv60ghx4g" path="res://assets/sprites/Main Characters/Ninja Frog/Idle (32x32).png" id="1_ucweq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08t41"]
