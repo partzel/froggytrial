@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="FroggyTrials"
+run/main_scene="uid://cwh842hp8f6eg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
