@@ -15,6 +15,10 @@ run/main_scene="uid://cwh842hp8f6eg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BackgroundMusic="*res://scenes/utils/background_music.tscn"
+
 [dotnet]
 
 project/assembly_name="FroggyTrials"
