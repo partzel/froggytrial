@@ -355,3 +355,10 @@ position = Vector2(520, 70)
 
 [node name="Enemy" parent="." instance=ExtResource("5_xi2wu")]
 position = Vector2(574, 65)
+speed = 100.0
+
+[node name="Enemy2" parent="." instance=ExtResource("5_xi2wu")]
+position = Vector2(346, -15)
+speed = 100.0
+
+[node name="enemies" type="Node" parent="."]
