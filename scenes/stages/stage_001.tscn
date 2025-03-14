@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwh842hp8f6eg"]
+[gd_scene load_steps=15 format=3 uid="uid://cwh842hp8f6eg"]
 
 [ext_resource type="PackedScene" uid="uid://c00elbiyaqnjq" path="res://scenes/entities/player.tscn" id="1_mv5rm"]
 [ext_resource type="Texture2D" uid="uid://d0tx8fy3u0i0x" path="res://assets/sprites/Terrain/Terrain (16x16).png" id="2_a1op6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bsb46ep33iwwh" path="res://assets/sprites/Background/Pink.png" id="3_4lc5m"]
 [ext_resource type="PackedScene" uid="uid://ctfruhjbewl51" path="res://scenes/utils/killzone.tscn" id="3_88bwl"]
 [ext_resource type="PackedScene" uid="uid://cu1t48nxxhf6r" path="res://scenes/entities/fruit.tscn" id="3_atanf"]
+[ext_resource type="FontFile" uid="uid://is7hl8wky48r" path="res://assets/fonts/Minecraft.ttf" id="5_4lc5m"]
 [ext_resource type="PackedScene" uid="uid://bq5oc7txhhxcv" path="res://scenes/entities/enemy.tscn" id="5_xi2wu"]
 [ext_resource type="PackedScene" uid="uid://ctpsrq8vc1o2k" path="res://scenes/utils/game_manager.tscn" id="6_d4dfe"]
 
@@ -320,6 +321,7 @@ sources/2 = SubResource("TileSetAtlasSource_48c53")
 distance = -162.0
 
 [node name="stage_001" type="Node2D"]
+position = Vector2(144, -24)
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_88bwl")
@@ -334,6 +336,7 @@ SPEED = 150.0
 JUMP_VELOCITY = -400.0
 
 [node name="Camera" type="Camera2D" parent="Player"]
+position = Vector2(0, -32)
 zoom = Vector2(2, 2)
 limit_bottom = 140
 position_smoothing_enabled = true
@@ -344,7 +347,7 @@ position_smoothing_speed = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_xi2wu")
 
-[node name="Pickups" type="Node" parent="."]
+[node name="Pickups" type="Node2D" parent="."]
 
 [node name="Fruit" parent="Pickups" instance=ExtResource("3_atanf")]
 position = Vector2(73, 5)
@@ -373,7 +376,7 @@ position = Vector2(496, 70)
 [node name="Fruit9" parent="Pickups" instance=ExtResource("3_atanf")]
 position = Vector2(520, 70)
 
-[node name="enemies" type="Node" parent="."]
+[node name="enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="enemies" instance=ExtResource("5_xi2wu")]
 position = Vector2(574, 65)
@@ -383,5 +386,16 @@ speed = 100.0
 position = Vector2(346, -15)
 speed = 100.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="GameManager" parent="." instance=ExtResource("6_d4dfe")]
 unique_name_in_owner = true
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 416.0
+offset_top = -184.0
+offset_right = 508.0
+offset_bottom = -152.0
+theme_override_colors/font_color = Color(0.572205, 0.382982, 0.491601, 1)
+theme_override_fonts/font = ExtResource("5_4lc5m")
+theme_override_font_sizes/font_size = 32
