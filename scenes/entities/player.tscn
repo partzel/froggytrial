@@ -92,6 +92,8 @@ animations = [{
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
 script = ExtResource("1_08t41")
 SPEED = 120.0
 JUMP_VELOCITY = -300.0
@@ -100,7 +102,7 @@ JUMP_VELOCITY = -300.0
 sprite_frames = SubResource("SpriteFrames_5ki56")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.824576
+frame_progress = 0.481958
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
